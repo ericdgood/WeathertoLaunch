@@ -30,25 +30,18 @@ class ParseMoviedb {
 
 //            GETS OVERVIEW OF MOVIE
             movie[i].setRocket(currentMovie.getString("name"));
+//            GETS OVERVIEW OF MOVIE
+            movie[i].setWindowStart(currentMovie.getString("windowstart"));
+//            GETS OVERVIEW OF MOVIE
+            JSONObject locArr = currentMovie.getJSONObject("location");
+            movie[i].setLocation(locArr.getString("name"));
+//            GETS OVERVIEW OF MOVIE
+            movie[i].setWindowEnd(currentMovie.getString("windowend"));
+//            GETS OVERVIEW OF MOVIE
+            JSONObject properties = currentMovie.getJSONObject("rocket");
+            movie[i].setRocketImage(properties.getString("imageURL"));
         }
         return movie;
     }
 
-//    EXAMPLE OF A MOVIE ARRAY
-
-// {
-//  "launches": [
-//    {
-//      "id": 1636,
-//      "name": "Soyuz 2.1B | Lotos-S1",
-//      "windowstart": "2018-10-25 00:00:00",
-//      "windowend": "2018-10-25 00:00:00",
-//      "net": "October 25, 2018 00:00:00 UTC",
-//      "status": 2,
-//      "tbdtime": 1,
-//      "tbddate": 0,
-//      "probability": -1,
-//      "changed": "2018-10-14 13:01:00",
-//      "lsp": "193"
-//    },
 }

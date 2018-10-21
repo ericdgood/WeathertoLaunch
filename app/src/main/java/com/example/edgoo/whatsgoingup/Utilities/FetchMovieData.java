@@ -39,7 +39,6 @@ public class FetchMovieData extends AsyncTask<String, Void, MoviesInfo[]> {
 //                BUILDS MOVIEDB URL INTO STRING URL
             String jsonresponse = FetchJson.getResponseFromHttpUrl(movieUrl);
 
-            Log.d(TAG, "parseMovieJson json: " + jsonresponse);
 //                PARES MOVIEDB URL
             return ParseMoviedb.parseMovieJson(jsonresponse);
 
