@@ -22,12 +22,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        recyclerView = findViewById(R.id.recycler_view);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        GridView mGridView = findViewById(R.id.gridview);
         mMovieAdapter = new MovieAdapter(this, mMovies);
-        mGridView.setAdapter(mMovieAdapter);
+        recyclerView.setAdapter(mMovieAdapter);
 
         loadMovieData();
     }
