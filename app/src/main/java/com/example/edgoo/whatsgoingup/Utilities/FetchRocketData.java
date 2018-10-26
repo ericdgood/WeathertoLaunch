@@ -1,9 +1,12 @@
 package com.example.edgoo.whatsgoingup.Utilities;
 
+import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.view.View;
 
 
+import com.example.edgoo.whatsgoingup.R;
 import com.example.edgoo.whatsgoingup.RocketAdapter;
 
 import org.json.JSONException;
@@ -16,25 +19,28 @@ public class FetchRocketData extends AsyncTask<String, Void, RocketInfo[]> {
 
 
     private final RocketAdapter mRocketAdapter;
+    @SuppressLint("StaticFieldLeak")
+    private final View mLoadIndicator;
 
-    public FetchRocketData(RocketAdapter rocketAdapter) {
+    public FetchRocketData(RocketAdapter rocketAdapter, View loadingIndicator) {
         mRocketAdapter = rocketAdapter;
+        mLoadIndicator = loadingIndicator;
     }
 
     @Override
     protected RocketInfo[] doInBackground(String... strings) {
 
-        URL movieUrl = null;
+        URL rocketUrl = null;
         try {
-            movieUrl = getApiUrl();
+            rocketUrl = getApiUrl();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
 
         try {
-            assert movieUrl != null;
+            assert rocketUrl != null;
 //                BUILDS ROCKET URL INTO STRING URL
-            String jsonresponse = FetchJson.getResponseFromHttpUrl(movieUrl);
+            String jsonresponse = FetchJson.getResponseFromHttpUrl(rocketUrl);
 
 //                PARSE ROCKET URL
             return ParseRocketdb.parseRocketJson(jsonresponse);
@@ -55,7 +61,8 @@ public class FetchRocketData extends AsyncTask<String, Void, RocketInfo[]> {
     }
 
     @Override
-    protected void onPostExecute(RocketInfo[] movieData) {
-        mRocketAdapter.setRocketData(movieData);
+    protected void onPostExecute(RocketInfo[] rocketData) {
+        mRocketAdapter.setRocketData(rocketData);
+        mLoadIndicator.setVisibility(View.GONE);
     }
 }

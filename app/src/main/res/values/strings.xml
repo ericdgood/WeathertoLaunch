@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Weather to Launch</string>
+    <string name="dont_blast">Don\'t blast off!! Your data is coming.</string>
 </resources>

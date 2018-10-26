@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/progree_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ProgressBar
+        android:id="@+id/loading_indicator"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toTopOf="@id/progree_layout"
+        app:layout_constraintBottom_toBottomOf="@id/progree_layout"
+        app:layout_constraintLeft_toLeftOf="@id/progree_layout"
+        app:layout_constraintRight_toRightOf="@id/progree_layout"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dont_blast"
+        android:textSize="18sp"
+        android:textColor="@color/titlebkg"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/loading_indicator"
+        app:layout_constraintLeft_toLeftOf="@id/progree_layout"
+        app:layout_constraintRight_toRightOf="@id/progree_layout"/>
+
+</android.support.constraint.ConstraintLayout>

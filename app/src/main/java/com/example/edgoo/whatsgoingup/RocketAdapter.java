@@ -40,6 +40,8 @@ public class RocketAdapter extends RecyclerView.Adapter<RocketAdapter.ViewHolder
                 .load(mRockets[position].getRocketImage())
                 .into(holder.rocketImage);
 
+
+
         holder.rocketImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +61,7 @@ public class RocketAdapter extends RecyclerView.Adapter<RocketAdapter.ViewHolder
     }
 
 
-    //    SETS MOVIE POSTERS
+
     public void setRocketData(RocketInfo[] rocketData) {
         this.mRockets = rocketData;
         notifyDataSetChanged();

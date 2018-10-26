@@ -1,12 +1,13 @@
 package com.example.edgoo.whatsgoingup;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.support.v7.widget.LinearLayoutManager;
+        import android.support.v7.widget.RecyclerView;
+        import android.view.View;
 
-import com.example.edgoo.whatsgoingup.Utilities.FetchRocketData;
-import com.example.edgoo.whatsgoingup.Utilities.RocketInfo;
+        import com.example.edgoo.whatsgoingup.Utilities.FetchRocketData;
+        import com.example.edgoo.whatsgoingup.Utilities.RocketInfo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,12 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
         mRocketAdapter = new RocketAdapter(this, mRockets);
         recyclerView.setAdapter(mRocketAdapter);
-
-        loadRocketData();
+        View loadingIndicator = findViewById(R.id.progree_layout);
+        loadRocketData(loadingIndicator);
     }
 
-    private void loadRocketData() {
-        new FetchRocketData(mRocketAdapter).execute();
-
+    private void loadRocketData(View loadingIndicator) {
+        new FetchRocketData(mRocketAdapter, loadingIndicator).execute();
     }
 }
