@@ -49,6 +49,9 @@ public class RocketAdapter extends RecyclerView.Adapter<RocketAdapter.ViewHolder
                 Intent intent = new Intent(mContext, DetailView.class);
                 intent.putExtra("place_name", mRockets[position].getRocket());
                 intent.putExtra("rocket_image", mRockets[position].getRocketImage());
+                intent.putExtra("window_start", mRockets[position].getWindowStart());
+                intent.putExtra("window_end", mRockets[position].getWindowEnd());
+                intent.putExtra("location", mRockets[position].getLocation());
                 mContext.startActivity(intent);
             }
         });

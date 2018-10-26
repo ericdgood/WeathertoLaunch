@@ -30,4 +30,71 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:src="@drawable/ic_action_calendar_day" />
 
+    <TextView
+        android:id="@+id/start_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/window_start"
+        app:layout_constraintTop_toBottomOf="@id/rocket_image_detail"
+        app:layout_constraintLeft_toLeftOf="@id/window_start"
+        android:textSize="12sp"
+        android:textColor="@color/titlebkg"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/window_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/start_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="20dp"
+        android:textSize="16sp"
+        tools:text="October 19, 2018 08:00UTC"/>
+
+    <TextView
+        android:id="@+id/end_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/window_end"
+        app:layout_constraintTop_toBottomOf="@id/window_start"
+        app:layout_constraintLeft_toLeftOf="@id/window_start"
+        android:textSize="12sp"
+        android:textColor="@color/titlebkg"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/window_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/end_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="20dp"
+        android:textSize="16sp"
+        tools:text="October 19, 2018 08:00UTC"/>
+
+    <ImageView
+        android:id="@+id/location_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_location"
+        android:layout_marginTop="20dp"
+        app:layout_constraintRight_toLeftOf="@id/location"
+        app:layout_constraintTop_toBottomOf="@id/window_end"/>
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/location_img"
+        app:layout_constraintBottom_toBottomOf="@id/location_img"
+        android:layout_marginRight="20dp"
+        android:textSize="18sp"
+        tools:text="Cape Canavrial, FL"/>
+
 </android.support.constraint.ConstraintLayout>

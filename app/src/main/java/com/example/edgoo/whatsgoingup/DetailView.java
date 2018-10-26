@@ -28,5 +28,17 @@ public class DetailView extends AppCompatActivity {
         Picasso.with(mContext)
                 .load(rocketImage)
                 .into(rocket_Image);
+//              GETS AND SETS ROCKET START WINDOW FROM DATA
+        String start = getIntent().getStringExtra("window_start");
+        TextView start_view = findViewById(R.id.window_start);
+        start_view.setText(start);
+//              GETS AND SETS ROCKET END WINDOW FROM DATA
+        String end = getIntent().getStringExtra("window_start");
+        TextView end_view = findViewById(R.id.window_end);
+        end_view.setText(end);
+//              GETS AND SETS ROCKET LOCATION FROM DATA
+        String loc = getIntent().getStringExtra("location");
+        TextView location = findViewById(R.id.location);
+        location.setText(loc);
     }
 }
