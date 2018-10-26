@@ -4,17 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.widget.GridView;
-import android.widget.TextView;
 
-import com.example.edgoo.whatsgoingup.Utilities.FetchMovieData;
-import com.example.edgoo.whatsgoingup.Utilities.MoviesInfo;
+import com.example.edgoo.whatsgoingup.Utilities.FetchRocketData;
+import com.example.edgoo.whatsgoingup.Utilities.RocketInfo;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MovieAdapter mMovieAdapter;
-    MoviesInfo[] mMovies;
+    private RocketAdapter mRocketAdapter;
+    RocketInfo[] mRockets;
     RecyclerView recyclerView;
 
     @Override
@@ -25,14 +22,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mMovieAdapter = new MovieAdapter(this, mMovies);
-        recyclerView.setAdapter(mMovieAdapter);
+        mRocketAdapter = new RocketAdapter(this, mRockets);
+        recyclerView.setAdapter(mRocketAdapter);
 
-        loadMovieData();
+        loadRocketData();
     }
 
-    private void loadMovieData() {
-        new FetchMovieData(mMovieAdapter).execute();
+    private void loadRocketData() {
+        new FetchRocketData(mRocketAdapter).execute();
 
     }
 }

@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:id="@+id/rocket_detail_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
         android:id="@+id/rocket_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="100dp"
+        android:background="@color/colorAccent"
+        android:textSize="28sp"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:paddingLeft="20dp"
+        tools:text="ROCKET NAME"/>
+
+    <ImageView
+        android:id="@+id/rocket_image_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:src="@drawable/ic_action_calendar_day"/>
 
 </LinearLayout>

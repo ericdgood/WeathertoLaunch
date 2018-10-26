@@ -1,5 +1,6 @@
 package com.example.edgoo.whatsgoingup;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,30 +9,24 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DetailView extends AppCompatActivity{
+import com.squareup.picasso.Picasso;
 
+public class DetailView extends AppCompatActivity {
+    private Context mContext;
 
-        @Override
-        protected void onCreate(@Nullable Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.rocket_detail);
-
-            getIncomingIntent();
-
-
-        }
-
-    private void getIncomingIntent(){
-
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.rocket_detail);
+//              GETS AND SETS ROCKET NAME FROM DATA
         String placeName = getIntent().getStringExtra("place_name");
-
-        setItemInfo(placeName);
-    }
-
-
-    private void setItemInfo(String placeName){
-
         TextView name = findViewById(R.id.rocket_name);
         name.setText(placeName);
+//              GETS AND SETS ROCKET IMAGE FROM DATA
+        String rocketImage = getIntent().getStringExtra("rocket_image");
+        ImageView rocket_Image = findViewById(R.id.rocket_image_detail);
+        Picasso.with(mContext)
+                .load(rocketImage)
+                .into(rocket_Image);
     }
-    }
+}

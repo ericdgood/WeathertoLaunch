@@ -12,9 +12,9 @@ import static android.content.ContentValues.TAG;
 
 class FetchJson {
 
-    public static String getResponseFromHttpUrl(URL movieUrl) throws IOException {
-        Log.d(TAG, "doInBackground fetch: " + movieUrl);
-        HttpURLConnection urlConnection = (HttpURLConnection) movieUrl.openConnection();
+    public static String getResponseFromHttpUrl(URL rocketUrl) throws IOException {
+        Log.d(TAG, "doInBackground fetch: " + rocketUrl);
+        HttpURLConnection urlConnection = (HttpURLConnection) rocketUrl.openConnection();
         try {
             InputStream in = urlConnection.getInputStream();
             Scanner scanner = new Scanner(in);

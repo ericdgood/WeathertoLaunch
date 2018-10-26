@@ -3,7 +3,7 @@ package com.example.edgoo.whatsgoingup.Utilities;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class MoviesInfo implements Parcelable {
+public class RocketInfo implements Parcelable {
 
     private String rocket;
     private String location;
@@ -11,7 +11,7 @@ public class MoviesInfo implements Parcelable {
     private String windowEnd;
     private String rocketImage;
 
-    private MoviesInfo(Parcel in) {
+    private RocketInfo(Parcel in) {
         rocket = in.readString();
         windowStart = in.readString();
         location = in.readString();
@@ -28,7 +28,7 @@ public class MoviesInfo implements Parcelable {
         dest.writeString(windowEnd);
     }
 
-    MoviesInfo() {
+    RocketInfo() {
     }
 
     @Override
@@ -36,15 +36,15 @@ public class MoviesInfo implements Parcelable {
         return 0;
     }
 
-    public static final Creator<MoviesInfo> CREATOR = new Creator<MoviesInfo>() {
+    public static final Creator<RocketInfo> CREATOR = new Creator<RocketInfo>() {
         @Override
-        public MoviesInfo createFromParcel(Parcel in) {
-            return new MoviesInfo(in);
+        public RocketInfo createFromParcel(Parcel in) {
+            return new RocketInfo(in);
         }
 
         @Override
-        public MoviesInfo[] newArray(int size) {
-            return new MoviesInfo[size];
+        public RocketInfo[] newArray(int size) {
+            return new RocketInfo[size];
         }
     };
     public String getRocket() {
